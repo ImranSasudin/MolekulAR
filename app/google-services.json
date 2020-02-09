@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282653424374",
+    "firebase_url": "https://molekular-7adae.firebaseio.com",
+    "project_id": "molekular-7adae",
+    "storage_bucket": "molekular-7adae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282653424374:android:d8af21a07e29a2d7184ad7",
+        "android_client_info": {
+          "package_name": "com.example.molekular"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282653424374-8dat96r7fbhr8ddlrtt5jqbk90mb2esv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.molekular",
+            "certificate_hash": "be34f49ad66f621f04f5564afa489604f246b211"
+          }
+        },
+        {
+          "client_id": "282653424374-qtpc19jbul14v1lmpar1lavus79bji9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb0AYjA4ZKBlG2988aS7Hkp44u2vTkCU0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282653424374-qtpc19jbul14v1lmpar1lavus79bji9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

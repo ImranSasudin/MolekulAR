@@ -37,30 +37,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         progressDialog = new ProgressDialog(this);
-
+        // Assign input from view
         usernameText=findViewById(R.id.username);
         passwordText=findViewById(R.id.password);
         loginButton=findViewById(R.id.login_btn);
 
+        // If login button clicked
         loginButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
+                // Assign string from text(view)
                 final String username = usernameText.getText().toString().trim();
                 final String password = passwordText.getText().toString().trim();
 
                 System.out.println(username);
                 System.out.println(password);
 
+                // Prompt error if input is/are empty
                 if (TextUtils.isEmpty(username)){
-                    usernameText.setError("Username is required...");
+                    usernameText.setError("Username is required");
                     usernameText.requestFocus();
                 }
                 else if (TextUtils.isEmpty(password)){
-                    passwordText.setError("Password is required...");
+                    passwordText.setError("Password is required");
                     passwordText.requestFocus();
                 }
                 else{
+                    // Loading bar
                     progressDialog.setMessage("Logging in...");
                     progressDialog.show();
 
@@ -82,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                                     System.out.println("Success Login");
                                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     progressDialog.dismiss();
+
+                                    startActivity(new Intent(getApplicationContext(),SplashActivity.class));
                                 }
                                 else{
                                     // Password salah
@@ -103,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                                Toast.makeText(MainActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                         }
                     });
                 }

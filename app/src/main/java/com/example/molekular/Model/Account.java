@@ -32,7 +32,7 @@ public class Account {
         this.password = password;
     }
 
-    public String getAccountRole() {
+    public String getRole() {
         return role;
     }
 

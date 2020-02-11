@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.text.TextUtils;
@@ -31,11 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String role = sharedPref.getString("role","Not assigned yet");
+
+        if(role != null){
+            startActivity(new Intent(getApplicationContext(),SplashActivity.class));
+        }
         progressDialog = new ProgressDialog(this);
         // Assign input from view
         usernameText=findViewById(R.id.username);
@@ -79,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                                 Account account = dataSnapshot.getValue(Account.class);
 
                                 String userPassword = account.getPassword();
+                                String userRole = account.getRole();
 
                                 // Password betul
                                 if(userPassword.equalsIgnoreCase(password)){
@@ -86,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
                                     System.out.println("Success Login");
                                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                     progressDialog.dismiss();
+
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putString("role", userRole);
+                                    editor.commit();
 
                                     startActivity(new Intent(getApplicationContext(),SplashActivity.class));
                                 }

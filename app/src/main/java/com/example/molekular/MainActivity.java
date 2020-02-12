@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.renderscript.Sampler;
 import android.text.TextUtils;
 import android.view.View;
@@ -40,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        String role = sharedPref.getString("role","Not assigned yet");
+        final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        String role = sharedPref.getString("role","");
 
-        if(role != null){
+        if(role.equalsIgnoreCase("student") || role.equalsIgnoreCase("teacher")){
             startActivity(new Intent(getApplicationContext(),SplashActivity.class));
         }
         progressDialog = new ProgressDialog(this);

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.text.Spanned;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,13 +14,33 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeActivity extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
+    Button quiz, notes, scanatom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
+        quiz = findViewById(R.id.quiz_btn);
+        notes = findViewById(R.id.notes_btn);
+        scanatom = findViewById(R.id.scanatom_btn);
+
+        notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),NotesActivity.class));
+            }
+        });
+
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),QuizActivity.class));
+            }
+        });
     }
+
+
 
     @Override
     public void onBackPressed() {

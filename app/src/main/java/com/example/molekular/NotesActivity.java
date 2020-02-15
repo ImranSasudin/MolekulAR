@@ -78,12 +78,10 @@ public class NotesActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
+   /* public void onBackPressed() {
 
-        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
 
-        /*AlertDialog.Builder builder = new AlertDialog.Builder(NotesActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(NotesActivity.this);
 
         builder.setTitle("Please confirm");
         builder.setMessage("Are you want to exit the app?");
@@ -110,6 +108,6 @@ public class NotesActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
 
         // Finally, display the dialog when user press back button
-        dialog.show();*/
-    }
+        dialog.show();
+    }*/
 }

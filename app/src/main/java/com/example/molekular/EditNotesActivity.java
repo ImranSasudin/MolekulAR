@@ -64,10 +64,9 @@ public class EditNotesActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
+    /*public void onBackPressed() {
 
         startActivity(new Intent(getApplicationContext(),NotesActivity.class));
 
-    }
+    }*/
 }

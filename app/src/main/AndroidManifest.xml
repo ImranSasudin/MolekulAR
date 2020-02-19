@@ -23,6 +23,8 @@
         <activity android:name=".EditNotesActivity"/>
         <activity android:name=".QuizActivity"/>
         <activity android:name=".AddQuizActivity"/>
+        <activity android:name=".QuizStudentActivity"/>
+        <activity android:name=".ResultActivity"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

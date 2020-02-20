@@ -38,12 +38,13 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/DispName"
         android:layout_alignStart="@+id/DispName"
+        android:layout_below="@+id/question"
+        android:layout_marginTop="50dp"
         android:id="@+id/answersgrp"
         android:clickable="true"
-        android:layout_centerVertical="true">
+        >
         <!--android:layout-->
         <!--android:checkedButton="@+id/radioButton"-->
-
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -81,8 +82,8 @@
         android:layout_height="wrap_content"
         android:text="Next Question"
         android:id="@+id/buttonnext"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/answersgrp"
+        android:layout_marginBottom="27dp"
+        android:layout_above="@+id/buttonquit"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="#fff"
@@ -93,8 +94,7 @@
         android:layout_height="wrap_content"
         android:text="Quit"
         android:id="@+id/buttonquit"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/buttonnext"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:background="#FF5722"
@@ -106,8 +106,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Questions"
         android:id="@+id/question"
-        android:layout_marginBottom="52dp"
-        android:layout_above="@+id/answersgrp"
+        android:layout_marginTop="52dp"
+        android:layout_below="@+id/DispName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
